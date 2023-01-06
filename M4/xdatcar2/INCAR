@@ -1,0 +1,52 @@
+SYSTEM = BiTiFeO
+
+Start parameter for this run:
+ISTART  = 0         ! 0=start job from scratch (see INIWAV); 1=restart with constant energy cut-off
+INIWAV  = 1         ! Fill wavefunctions arrays with random numbers
+ICHARGE = 0         ! 
+
+Electronic relaxation:
+ENCUT   = 400.0     ! Cutoff energy for plane waves basis set in eV  
+IALGO   = 38        ! IALGO = 38 + 48; IALGO = 48 does not work for Ce-oxides
+NELM    = 100       ! Maximum number of electronic SC steps
+NELMDL  = -12       ! Number of NON-selfconsistency steps (negative value: delay only for the start-configuration)
+EDIFF   = 1E-4      ! Global-break condition for the electronic SC-loop (ELM)
+!NNUPDOWN = 20      
+
+Calculation mode:
+PREC    = NORMAL  ! Calcululation level (Changes FFT-grids)
+ISPIN   = 2         ! spin-polarized calculations
+LMAXMIX = 4         ! LMAXMIX = l PAW flag, it controls up to which l quantum number the onsite PAW charge densities are passed through the charge density mixer, L(S)DA+U calculations require in many cases an increase of  LMAXMIX to 4 (or 6 for f-elements) in order to obtain fast convergence to the groundstate.
+ADDGRID = .TRUE.    ! PAW flag, an additional (third) support grid is used for the evaluation of the augmentation charges.
+LASPH   = .TRUE.    ! PAW flag, aspherical Exc in radial PAW)
+ISYM    = 1         ! switch symmetry stuff off
+MAGMOM  =  20*0.0 12*0.0 60*0.0 4*5.0
+
+PBE+U calculation:
+LDAU      = .TRUE.    ! Switches on the L(S)DA+U
+LDAUTYPE  = 2         ! Dudarev's approach to LSDA+U (Default)
+LDAUL     = -1  2  -1 2
+LDAUU     = 0.00  4.50 0.00 4.50
+LDAUJ     = 0.00 0.00 0.00 0.00
+LDAUPRINT = 0         ! Controls verbosity of the L(S)DA+U module, 0: silent
+
+Integration over the Brillouin zone (BZ):
+ISMEAR  = 0         ! determines how the partial occupancies f_nk are set for each wavefunction. For the finite temperature LDA SIGMA determines the width of the smearing in eV; 0 = Gaussian smearing
+SIGMA   = 0.1      !  
+
+Ionic relaxation:
+NSW     = 600       ! Number of ionic steps
+EDIFFG  = -0.01     ! stop if all forces are smaller than |EDIFFG|
+IBRION  = 1         ! determines how the ions are updated and moved, 2 = the conjugate gradient algorithm
+ISIF    = 3         ! Calculate FORCE and Relaxa Ions 
+POTIM   = 0.50      ! serves as a scaling constant for the forces in all minimization algorithms (quasi-Newton, conjugate gradient, and damped molecular dynamics). Especially the Quasi-Newton algorithm is sensitive to the choice of this parameter.  
+
+!DOS calculation:
+!LORBIT  = 11        ! Calculate the DOS without providing the Wigner Seitz radius, writes DOSCAR and PROCAR files
+!NEDOS   = 1001      ! Number of points to calculate the DOS (integer)
+
+VASP OUTPUTs
+NWRITE  = 2         ! Determines how much information will be written in OUTCAR (verbosity flag); 2(default)
+
+Key for parallel mode calculation:
+NPAR = 12 

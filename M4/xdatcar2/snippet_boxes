@@ -1,0 +1,10 @@
+ 2082  for i in {1..156}; do cat xdatcar_1 | grep = -B5 -m $i | tail -n 6 | head -n3 > c1_box$i ; done
+ 2084  for i in {1..153}; do cat xdatcar_2 | grep = -B5 -m $i | tail -n 6 | head -n3 > c2_box$i ; done
+ 2087  for i in {1..130}; do cat xdatcar_3 | grep = -B5 -m $i | tail -n 6 | head -n3 > c3_box$i ; done
+ 2089  for i in {1..64}; do cat xdatcar_4 | grep = -B5 -m $i | tail -n 6 | head -n3 > c4_box$i ; done
+ 2091  for i in {1..117}; do cat xdatcar_5 | grep = -B5 -m $i | tail -n 6 | head -n3 > c5_box$i ; done
+ 2098  for i in {1..305}; do cat xdatcar_6 | grep = -B5 -m $i | tail -n 6 | head -n3 > c6_box$i ; done
+ 2099  for i in {1..108}; do cat xdatcar_7 | grep = -B5 -m $i | tail -n 6 | head -n3 > c7_box$i ; done
+ 2100  for i in {1..52}; do cat xdatcar_8 | grep = -B5 -m $i | tail -n 6 | head -n3 > c8_box$i ; done
+ 2101  for i in {1..120}; do cat xdatcar_9 | grep = -B5 -m $i | tail -n 6 | head -n3 > c9_box$i ; done
+ 2102  for i in {1..322}; do cat xdatcar_10 | grep = -B5 -m $i | tail -n 6 | head -n3 > c10_box$i ; done

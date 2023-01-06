@@ -1,0 +1,12 @@
+ 2211  mkdir coords
+ 2226  for i in {1..156}; do cat XDATCARS/xdatcar_1 | grep = -m$i -A 96 | tail -n 96 > coords/c1_coord$i; done
+ 2227  cat coords/c1_coord3
+ 2230  for i in {1..153}; do cat XDATCARS/xdatcar_2 | grep = -m$i -A 96 | tail -n 96 > coords/c2_coord$i; done
+ 2231  for i in {1..130}; do cat XDATCARS/xdatcar_3 | grep = -m$i -A 96 | tail -n 96 > coords/c3_coord$i; done
+ 2232  for i in {1..64}; do cat XDATCARS/xdatcar_4 | grep = -m$i -A 96 | tail -n 96 > coords/c4_coord$i; done
+ 2233  for i in {1..117}; do cat XDATCARS/xdatcar_5 | grep = -m$i -A 96 | tail -n 96 > coords/c5_coord$i; done
+ 2234  for i in {1..305}; do cat XDATCARS/xdatcar_6 | grep = -m$i -A 96 | tail -n 96 > coords/c6_coord$i; done
+ 2235  for i in {1..108}; do cat XDATCARS/xdatcar_7 | grep = -m$i -A 96 | tail -n 96 > coords/c7_coord$i; done
+ 2236  for i in {1..52}; do cat XDATCARS/xdatcar_8 | grep = -m$i -A 96 | tail -n 96 > coords/c8_coord$i; done
+ 2237  for i in {1..120}; do cat XDATCARS/xdatcar_9 | grep = -m$i -A 96 | tail -n 96 > coords/c9_coord$i; done
+ 2238  for i in {1..322}; do cat XDATCARS/xdatcar_10 | grep = -m$i -A 96 | tail -n 96 > coords/c10_coord$i; done
